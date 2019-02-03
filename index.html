@@ -1,0 +1,774 @@
+   
+    <!DOCTYPE html>
+   <html lang="en">
+   
+   	   <head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+			<title>IEEE Job Fair</title>
+			<link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
+			<link rel="stylesheet" href="assets/css/global.min.css">
+			<script src="assets/js/critical.min.js"></script>			
+		
+				   <title>IEEE Job Fair</title><meta name="generator" content="SEOmatic">
+<meta name="keywords" content="IEEE KERALA SECTION , IEEE LINK , IEE JOB FAIR">
+<meta name="description" content=" IEEE JOB FAIR">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="robots" content="all">
+<meta content="en_US" property="og:locale">
+<meta content="website" property="og:type">
+<meta content=" " property="og:url">
+<meta content="IEEE Job Fair" property="og:title">
+<meta content="IEEE Job Fair" property="og:description">
+<meta content=" " property="og:image">
+<meta content="1200" property="og:image:width">
+<meta content="630" property="og:image:height">
+<meta content="IEEE Job Fair" property="og:image:alt">
+
+
+<style>header{position:fixed;top:0;width:100%;z-index:100;transform:translateY(0);transition:transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)}.c-nav{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;width:100%;padding:1.2rem 4.8rem;-ms-flex-flow:row wrap;flex-flow:row wrap;position:relative;transition:background linear 0.1s}@media screen and (max-width: 1240px){.c-nav{padding:1.2rem}}@media screen and (max-width: 1020px){.c-nav{display:none}}.c-nav__logo{display:-ms-inline-flexbox;display:inline-flex;margin-right:24px;position:relative;z-index:200}.c-nav__logo svg{height:24px}.c-nav--mobile{position:absolute}.c-nav--left,.c-nav--right{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.c-nav--center{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.c-nav--blue{background:rgba(234,246,252,0.95)}.c-nav--green{background:rgba(241,254,244,0.95)}.c-nav--white{background:rgba(255,255,255,0.95)}.c-nav--offwhite{background:rgba(249,251,252,0.95)}.c-nav--dark-blue{background:#011b33}.c-nav--dark-blue .c-nav-menu__item a{color:white}@media screen and (max-width: 600px){.c-nav{padding:16px 0}}.c-nav-menu>li{margin-bottom:0}.c-nav-menu--horizontal{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.c-nav-menu--vertical ~ .c-nav-menu--vertical{margin-top:35px}.c-nav-menu__label{font-size:1rem;color:#3d5e69;text-transform:uppercase;margin-bottom:10px;display:block;letter-spacing:0.5px;line-height:1.2;font-weight:500}.c-nav-menu__item a{font-size:1.5rem;font-weight:500;color:#011b33;line-height:1.3;vertical-align:middle;letter-spacing:-0.01em}.c-nav-menu__item a .u-icon-arrow{margin-left:4px;color:#011b33;transition:border linear 0.1s}.c-nav-menu__item a:hover{color:#0ba4db}.c-nav-menu__item a:hover .u-icon-arrow{border-color:#0ba4db transparent transparent transparent}.c-nav-menu__item[href="#"] .c-nav-menu__item a:hover{color:rgba(1,27,51,0.5)}.c-nav-menu--horizontal>.c-nav-menu__item{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;margin-bottom:0;margin-right:20px;height:40px}.c-nav-menu--horizontal>.c-nav-menu__item:last-child{margin-right:0}.c-nav-menu--horizontal>.c-nav-menu__item--countries{cursor:pointer;margin-left:16px;position:relative;padding:5px}.c-nav-menu--horizontal>.c-nav-menu__item--countries span:not(.u-flag-icon){color:rgba(1,27,51,0.7)}.c-nav-menu--horizontal>.c-nav-menu__item--countries .u-flag-icon{border-radius:50%;width:20px;border-radius:4px;width:16px}.c-nav-menu--horizontal>.c-nav-menu__item--countries .c-nav-menu__item .u-flag-icon{display:inline-block;margin-right:10px}.c-nav-menu--vertical>.c-nav-menu__item{margin-bottom:5px;width:100%}.c-nav-menu--vertical>.c-nav-menu__item:last-child{margin-bottom:0}.c-nav-menu__item--has-icon{margin-bottom:15px}.c-nav-menu__item--has-icon a{display:-ms-flexbox;display:flex}.c-nav-menu__item--has-icon .c-nav-menu__icon{margin-right:20px}.c-nav-menu__item--has-icon .c-nav-menu__text{-ms-flex:1;flex:1}.c-nav-menu--horizontal .c-nav-menu__item--has-icon,.c-nav-menu--vertical .c-nav-menu__item--has-icon{margin-bottom:20px}.c-nav-menu--horizontal .c-nav-menu__item--has-icon:last-child,.c-nav-menu--vertical .c-nav-menu__item--has-icon:last-child{margin-bottom:0}.c-nav-menu__icon{width:60px;height:60px;background:whitesmoke;border-radius:50%;overflow:hidden}.c-nav-menu__icon--md{width:50px;height:50px}.c-nav-menu__icon img{width:100%;transition:transform .3s}.c-nav-menu__item--has-icon:hover .c-nav-menu__icon img{transform:scale(1.2)}.c-nav-menu__text h4{font-size:1.6rem;font-weight:500;margin:0 0 5px}.c-nav-menu__item--has-icon:hover .c-nav-menu__text h4{color:#0ba4db}.c-nav-menu__text p{font-size:1.4rem;margin:0;letter-spacing:0;line-height:1.5}.c-nav-menu__item--has-icon:hover .c-nav-menu__text p{color:#011b33}.c-nav.c-nav--mobile-only{display:none;padding:0}@media screen and (max-width: 1020px){.c-nav.c-nav--mobile-only{display:block;overflow-x:hidden}}.c-nav.c-nav--mobile-only .c-nav__body--parent{overflow-x:hidden;transition:all 0.3s cubic-bezier(0.23, 1, 0.32, 1);position:relative;display:none}.c-nav.c-nav--mobile-only .c-nav__body .c-header{margin-bottom:10px}.c-nav.c-nav--mobile-only .c-nav__body .c-header .c-button{opacity:0.7;transform:translateY(-8px)}.c-nav.c-nav--mobile-only .c-nav__body .c-header .c-button__text{color:#55717b}.c-nav.c-nav--mobile-only .c-nav__body .c-header .c-button__icon svg path{fill:#55717b}.c-nav.c-nav--mobile-only .c-nav__body .c-header .c-button__icon{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.c-nav.c-nav--mobile-only.c-nav--is-opened .c-nav__body--parent{display:block}.c-nav.c-nav--mobile-only .c-nav__mask{width:200%;transition:all 0.3s cubic-bezier(0.23, 1, 0.32, 1)}.c-nav.c-nav--mobile-only .c-nav__mask>div{width:50%;float:left;padding:16px}.c-nav.c-nav--mobile-only .c-nav__body--is-opened .c-nav__mask{transform:translateX(-50%)}.c-nav.c-nav--mobile-only .c-nav__header{padding:16px;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;width:100%;justify-content:space-between;border-bottom:1px solid rgba(240,242,243,0.6);position:relative;z-index:999}.c-nav.c-nav--mobile-only .c-nav__header .c-nav--right .c-button{display:none}.c-nav.c-nav--mobile-only .c-nav__trigger{cursor:pointer;display:inline-block;position:relative;margin:10px 5px;z-index:20;margin-left:15px}.c-nav.c-nav--mobile-only .c-nav__trigger--is-active span:nth-child(2){opacity:0}.c-nav.c-nav--mobile-only .c-nav__trigger--is-active span:first-child{top:0.438em;transform:rotate(45deg)}.c-nav.c-nav--mobile-only .c-nav__trigger--is-active span:last-child{top:-0.313em;transform:rotate(-45deg)}.c-nav.c-nav--mobile-only .c-nav__trigger span{background-color:rgba(1,27,51,0.95);display:block;height:0.133em;margin-bottom:.250em;position:relative;top:0;transition:all 0.3s ease-in-out;width:1.25em}.c-nav.c-nav--mobile-only .c-nav__trigger span:last-child{margin-bottom:0}.c-nav.c-nav--mobile-only .c-nav-menu__group{margin-bottom:30px}.c-nav.c-nav--mobile-only .c-nav-menu__group:last-child{margin-bottom:0}.c-nav.c-nav--mobile-only .c-nav-menu__item{margin-bottom:16px;position:relative;transition:.3s all}.c-nav.c-nav--mobile-only .c-nav-menu__item:last-child{margin-bottom:0;margin-top:20px}.c-nav.c-nav--mobile-only .c-nav-menu__item a[href="#"]:before{content:"";position:absolute;right:0;width:0;height:0;top:50%;transform:translateY(-50%) rotate(0);border-style:solid;border-width:3px 0 3px 5.2px;border-color:transparent transparent transparent #5c6a6e;transition:ease-in-out 0.1s transform}.c-nav.c-nav--mobile-only .c-nav-menu__item:hover{color:#000}.c-nav.c-nav--mobile-only .c-nav-menu__item--cta::before{content:none}.c-nav.c-nav--mobile-only .c-nav-menu__item--cta .u-text--secondary{color:#3bb75e}.c-nav.c-nav--mobile-only .c-nav-menu__item--cta .c-button{text-align:center;height:40px;line-height:40px;color:white}.c-nav.c-nav--mobile-only .c-nav-menu__group .c-nav-menu__item:last-child{margin-top:0}
+ </style>
+<style>.c-homepage-animation{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden}.c-homepage-animation__curve{position:absolute;top:calc(50% - 200px);left:0;width:100%;height:400px;background-size:auto 350px;display:none}.c-homepage-animation--play .c-homepage-animation__curve{-webkit-clip-path:polygon(0 0, 0 0, 0 100%, 0 100%);clip-path:polygon(0 0, 0 0, 0 100%, 0 100%);animation:moveCurve 4s;animation-iteration-count:1}.c-homepage-animation__curve:before{content:'';position:absolute;left:0;right:0;top:0;width:100%;height:100%;opacity:0.2;background-size:inherit;background-image:url("assets/img/patterns/curved-pattern.png");background-repeat:repeat-x}@keyframes moveCurve{0%{-webkit-clip-path:polygon(0 0, 0 0, 0 100%, 0 100%);clip-path:polygon(0 0, 0 0, 0 100%, 0 100%)}50%{-webkit-clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%);clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%)}100%{-webkit-clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%);clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}}.c-homepage-animation__worldmap{position:absolute;top:0;left:45%;height:100%;width:55%;overflow:hidden;border-radius:50%;transition:.3s ease-in;z-index:2}@media all and (max-width: 800px){.c-homepage-animation__worldmap{left:0;top:-50%;width:100%}}.c-homepage-animation--play .c-homepage-animation__worldmap{opacity:1}.c-homepage-animation__worldmap svg{position:absolute;transition:2s cubic-bezier(0.075, 0.82, 0.165, 1);left:-30%;top:0;height:100%}@media all and (max-width: 800px){.c-homepage-animation__worldmap svg{left:-600px;top:100px}}.c-homepage-animation--americas .c-homepage-animation__worldmap svg{top:10%;left:0}.c-homepage-animation--africa .c-homepage-animation__worldmap svg{left:-35%;top:5%}.c-homepage-animation--europe .c-homepage-animation__worldmap svg{left:-50%;top:15%}.c-homepage-animation__worldmap svg .map-pointer{opacity:0;transform:scale(0.5);transition:.2s ease-in;pointer-events:none}.c-homepage-animation__worldmap svg .map-pointer#united-states{transform-origin:159px 212px}.c-homepage-animation__worldmap svg .map-pointer#canada{transform-origin:229px 82px}.c-homepage-animation__worldmap svg .map-pointer#brazil{transform-origin:375px 432px}.c-homepage-animation__worldmap svg .map-pointer#nigeria{transform-origin:658px 334px}.c-homepage-animation__worldmap svg .map-pointer#egypt{transform-origin:773px 260px}.c-homepage-animation__worldmap svg .map-pointer#south-africa{transform-origin:744px 531px}.c-homepage-animation__worldmap svg .map-pointer#uk{transform-origin:674px 161px}.c-homepage-animation__worldmap svg .map-pointer#china{transform-origin:1084px 201px}.c-homepage-animation__worldmap svg .map-pointer#india{transform-origin:1014px 271px}.c-homepage-animation__worldmap svg .map-pointer#norway{transform-origin:754px 41px}.c-homepage-animation--europe .c-homepage-animation__worldmap svg .map-pointer#norway,.c-homepage-animation--europe .c-homepage-animation__worldmap svg .map-pointer#china,.c-homepage-animation--europe .c-homepage-animation__worldmap svg .map-pointer#uk,.c-homepage-animation--europe .c-homepage-animation__worldmap svg .map-pointer#india{opacity:1;transform:scale(1)}.c-homepage-animation--europe .c-homepage-animation__worldmap svg .map-pointer#uk{transition-delay:.6s}.c-homepage-animation--europe .c-homepage-animation__worldmap svg .map-pointer#norway{transition-delay:1s}.c-homepage-animation--europe .c-homepage-animation__worldmap svg .map-pointer#india{transition-delay:1.5s}.c-homepage-animation--europe .c-homepage-animation__worldmap svg .map-pointer#china{transition-delay:2.1s}.c-homepage-animation--americas .c-homepage-animation__worldmap svg .map-pointer#canada,.c-homepage-animation--americas .c-homepage-animation__worldmap svg .map-pointer#united-states,.c-homepage-animation--americas .c-homepage-animation__worldmap svg .map-pointer#brazil{opacity:1;transform:scale(1)}.c-homepage-animation--americas .c-homepage-animation__worldmap svg .map-pointer#canada{transition-delay:.6s}.c-homepage-animation--americas .c-homepage-animation__worldmap svg .map-pointer#united-states{transition-delay:1s}.c-homepage-animation--americas .c-homepage-animation__worldmap svg .map-pointer#brazil{transition-delay:1.5s}.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer{cursor:e-resize;pointer-events:all}.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#brazil,.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#nigeria,.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#south-africa,.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#egypt,.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#norway{opacity:1;transform:scale(1) rotate(0)}.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#norway{transition-delay:.6s}.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#egypt{transition-delay:1s}.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#south-africa{transition-delay:1.5s}.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer#nigeria{transition-delay:2s}.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer:hover{transform:scale(1.1)}.c-homepage-animation--africa .c-homepage-animation__worldmap svg .map-pointer--left{cursor:w-resize}.c-homepage-animation__tooltip{position:absolute;z-index:20;background:#f1fdf4;max-width:180px;transition:transform .3s, opacity .3s;opacity:0;transform:translateY(-10px) rotate(-2deg)}.c-homepage-animation__tooltip--on-left{transform:translateY(-10px) rotate(2deg);text-align:right}.c-homepage-animation__tooltip--is-visible{opacity:1;transform:translateY(0) rotate(0)}.c-homepage-animation__tooltip h5{font-size:1.2rem;line-height:1;margin:0}.c-homepage-animation__tooltip h5 b{color:#3bb75e}.c-homepage-animation__tooltip p{font-size:1.2rem;line-height:1.4;margin:5px 0}
+ </style>
+<style>.c-hero-video{width:90%;max-width:1024px;position:relative;z-index:1000;transition:all .3s linear;opacity:0}@media screen and (max-width: 600px){.c-hero-video{width:100%}}@keyframes video-in{from{transform:rotateX(20deg) translateY(-200px) scale(0.9);opacity:1}to{transform:rotateX(0) translateY(0) scale(1);opacity:1}}@keyframes video-out{to{opacity:0}}.u-overlay--is-entering .c-hero-video{animation:video-in .3s;animation-delay:.5s}.u-overlay--is-visible .c-hero-video{opacity:1}.u-overlay--is-leaving .c-hero-video{animation:video-out .5s}.c-hero-video--is-visible{opacity:1}.c-hero-video__iframe{height:0;padding-bottom:56.25%;position:relative;border-radius:6px;overflow:hidden;box-shadow:1px 8px 29px rgba(0,0,0,0.4)}.c-hero-video__iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.c-hero-video .c-button--close{width:24px;height:34px;position:absolute;right:-32px;border-radius:60px;top:-2px;opacity:0.6;transition:opacity linear 0.3s}.c-hero-video .c-button--close:hover{opacity:0.8}@media screen and (max-width: 600px){.c-hero-video .c-button--close{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);opacity:0.5;position:fixed;top:auto}.c-hero-video .c-button--close:before,.c-hero-video .c-button--close:after{content:none}}.c-hero-video .c-button--close span{padding:0 25px;border-radius:4px;background-color:#ffffff30;border:1px solid #ffffff29;line-height:2.6;color:white}
+ </style>
+<style>.c-logo-row{display:-ms-flexbox;display:flex;min-height:100px;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;position:relative;z-index:2}@media screen and (max-width: 750px){.c-logo-row{-ms-flex-wrap:wrap;flex-wrap:wrap}}@media screen and (max-width: 600px){.c-logo-row{-ms-flex-pack:start;justify-content:flex-start}}.c-logo-row--has-grid{margin-bottom:5px}.c-logo-row--has-grid:last-child{margin-bottom:0}@media screen and (max-width: 600px){.c-logo-row--has-grid{display:-ms-flexbox;display:flex}.c-logo-row--has-grid ~ .c-logo-row--has-grid{display:none}}.c-logo-row--has-grid .c-logo{width:100%;max-width:150px;line-height:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative}.c-logo-row--has-grid .c-logo:first-child{-ms-flex-pack:start;justify-content:flex-start}.c-logo-row--has-grid .c-logo:last-child{-ms-flex-pack:end;justify-content:flex-end}@media screen and (max-width: 600px){.c-logo-row--has-grid .c-logo:last-child{-ms-flex-pack:start;justify-content:flex-start}}.c-logo{display:-ms-flexbox;display:flex;position:relative;height:28px;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.c-logo:first-child{padding-left:0}.c-logo:last-child{padding-right:0}@media screen and (max-width: 750px){.c-logo{-ms-flex:0 1 50%;flex:0 1 50%}.c-logo:first-child{padding-left:35px}.c-logo:last-child{padding-right:35px}}@media screen and (max-width: 600px){.c-logo{margin:15px 0;height:18px;-ms-flex-pack:start;justify-content:flex-start}.c-logo:first-child{padding-left:0}.c-logo:last-child{padding-right:0}}.c-logo>img{max-height:100%}@media screen and (max-width: 600px){.c-logo.u-hidden--mobile{display:none}}
+ </style>
+<style>.c-hero{display:-ms-flexbox;display:flex;position:relative}@media screen and (max-width: 600px){.c-hero{display:block}}.c-hero__body{max-width:64rem;width:100%;opacity:1;transition:opacity ease-in-out 0.3s}.c-hero__side{-ms-flex:1;flex:1}.c-hero__cta{margin-top:28px}.c-hero__cta .c-button{margin-right:20px}.c-hero__cta .c-button:last-child{margin-right:0}@keyframes promptContinue{0%,70%,90%{transform:translateY(0)}80%{transform:translateY(12px)}}.c-hero__continue{position:absolute;top:100%;left:0;right:0;margin:50px auto;text-align:center;color:#011b33;animation:promptContinue infinite ease-in-out 3s;font-family:sans-serif;z-index:2}.c-hero--central{text-align:center}.c-hero--central .c-hero__body{padding:200px 0 150px}@media screen and (max-width: 600px){.c-hero--central .c-hero__body{padding-bottom:100px}}.c-hero--central-no-float:before{content:none}.c-hero--has-overflow:before{content:'';position:absolute;left:-48px;right:-48px;bottom:-80px;height:120px;border-radius:6px 6px 0 0;background:white;box-shadow:2px 0px 1px rgba(0,0,0,0.02),-2px -2px 1px rgba(0,0,0,0.02);z-index:1}.c-hero--central,.c-hero--pricing{-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.c-hero--central .c-hero__body,.c-hero--pricing .c-hero__body{margin:0 auto}.c-hero--has-video .c-hero__body{transition-delay:0.3s}.c-hero--pricing{display:block;padding-bottom:0}.c-hero--pricing .c-hero__body{margin:0 auto;padding:200px 0 0;max-width:none}.c-hero--pricing .c-hero__heading{max-width:64rem;margin:0 auto;text-align:center}.c-hero--pricing .c-pricing-cards{margin:0 auto;transform:translateY(80px)}.c-hero--demo{display:block;padding-bottom:0;margin-bottom:50px}.c-hero--demo .c-hero__body{margin:0 auto;padding:200px 0 0;max-width:none}.c-hero--demo .c-hero__heading{max-width:64rem;margin:0 auto;text-align:center}.c-hero--demo .c-hero__body{margin-bottom:60px}.c-hero--contact{margin-bottom:100px}.c-hero--contact .c-hero__body{margin:0 auto;padding:200px 0 0;max-width:none}.c-hero--contact .c-hero__heading{max-width:64rem;margin:0 auto;text-align:center}.c-hero--contact .c-contact-cards{margin:0 auto;transform:translateY(80px)}.c-hero--double-sided{min-height:690px;padding-bottom:80px}@media screen and (max-width: 600px){.c-hero--double-sided{padding-bottom:0}}.c-hero--double-sided .c-hero__heading{text-align:left}.c-hero--double-sided .c-hero__side:first-child{display:-ms-flexbox;display:flex;-ms-flex-align:end;align-items:flex-end}.c-hero--double-sided .c-hero__body{padding:240px 0 180px;max-width:56rem;position:relative;z-index:4}@media screen and (max-width: 600px){.c-hero--double-sided .c-hero__body{padding:160px 0 100px}}.c-hero--404 h1{font-size:16rem}.c-hero--404 .c-hero__heading{margin-bottom:30px}.c-hero--central-video{display:block;padding-bottom:0;z-index:10}.c-hero--central-video .c-hero__body{margin:0 auto;padding:150px 0 0;max-width:none}.c-hero--central-video .c-hero__heading{max-width:64rem;margin:0 auto;text-align:center}.c-hero--central-video .c-hero-video{margin:0 auto;transform:translateY(80px);opacity:1;width:100%}@media screen and (max-width: 600px){.c-hero--central-video .c-hero-video{transform:translateY(40px)}}.c-hero--support{display:block;padding-bottom:0;z-index:10}.c-hero--support .c-hero__body{margin:0 auto;padding:200px 0 150px;max-width:none}@media screen and (max-width: 600px){.c-hero--support .c-hero__body{padding-bottom:100px}}.c-hero--support .c-hero__heading{max-width:64rem;margin:0 auto;text-align:center;margin-bottom:60px}.c-hero__footer{position:absolute;bottom:0;left:0;width:100%;display:-ms-flexbox;display:flex;padding:0 0 48px;transition:0.6s ease-in;z-index:3}.c-hero__footer--blue{background-color:#eaf6fc}.c-hero__footer--offwhite{background:#F9FBFC}.c-hero__footer--green{background-color:#F1FEF4}@media screen and (max-width: 600px){.c-hero__footer{display:block;position:relative}.c-hero__footer .l-container{display:block}}.c-hero__video-summary{text-align:right;display:-ms-flexbox;display:flex;width:450px;-ms-flex-align:center;align-items:center;cursor:pointer;transition:opacity 0.5s ease-in}@media screen and (max-width: 600px){.c-hero__video-summary{opacity:1;width:100%;border-top:1px solid rgba(0,0,0,0.05);padding-top:30px;margin-top:30px;display:block;text-align:left}}.c-hero__video-summary:hover .c-button{transform:scale(1.1);box-shadow:-2px 1px 5px 0px rgba(0,0,0,0.05),-1px 2px 2px rgba(0,0,0,0.08)}.c-hero__video-summary p{font-weight:500;margin:0}.c-hero__video-summary .c-button{width:35px;height:35px;border-radius:50%;background:#0ba4db;margin:0 0 0 10px;padding:0;-webkit-appearance:none;transition:all 0.25s cubic-bezier(0.17, 0.635, 0.54, 1.435);will-change:box-shadow;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.c-hero__video-summary .c-button svg{padding-left:0.6px}.c-hero__video-summary .u-mobile-only .c-button--reset{padding:0;outline:0;height:auto;background:none;-webkit-appearance:none;line-height:1;color:#0ba4db;margin-top:10px;font-size:1.6rem}.c-hero__video-summary .u-mobile-only .c-button--reset svg>path{fill:#0ba4db}@media screen and (max-width: 600px){.c-hero__video-summary .u-mobile-only .c-button--reset{padding:10px 0}}.c-hero__video-summary svg>path{fill:white}.c-hero__logos{-ms-flex:1;flex:1}@media screen and (max-width: 600px){.c-hero__logos{display:inline-block;width:100%}}.c-hero__logos p{font-size:1.4rem;font-weight:500;margin:0 0 12px}.c-hero__logos .c-logo{width:auto;margin:0 24px 0 0;float:left}@media screen and (max-width: 600px){.c-hero__logos .c-logo{margin-right:15px}}.c-hero__media{width:100%;height:80%;transform:translateX(50px) translateY(150px);border-radius:6px;background-size:cover;background-repeat:no-repeat;transition:transform ease-in-out 0.5s;position:relative;z-index:2}.c-hero__media:before{content:'';position:absolute;top:10px;left:10px;z-index:-1;width:100%;height:100%;border-radius:6px;border:dashed 2px rgba(0,0,0,0.1)}.c-hero__label{display:inline-block;display:inline-block;border-radius:4px;font-size:1.2rem;letter-spacing:0.5px;margin-bottom:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0.5}.l-section--green .c-hero__label{color:rgba(1,27,51,0.9)}.l-section--blue .c-hero__label{color:rgba(1,27,51,0.9)}
+ </style>
+<style>.c-section-pattern{position:absolute;top:0;left:0;width:100%;height:100%}.c-section-pattern:before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;opacity:0.2;background-repeat:no-repeat}.c-hero--blue .c-section-pattern{opacity:0.2}.c-hero--blue .c-section-pattern:before{filter:hue-rotate(900deg) invert(0.5)}.c-section-pattern--straight:before{background-image:url("assets/img/patterns/straight-pattern.png");background-size:auto 200px;background-repeat:repeat-x}.c-section-pattern--curved{height:400px;background-size:auto 350px}.c-section-pattern--curved:before{background-size:inherit;background-image:url("assets/img/patterns/curved-pattern.png");background-position:0 50px;background-repeat:repeat-x}.l-section--hero .c-section-pattern--curved{top:25%}.l-section--blue .c-section-pattern--curved:before{background-image:url("assets/img/patterns/curved-pattern-blue.png")}.c-section-pattern--curved.u-animate--play{animation:moveCurve linear 3s}@media screen and (max-width: 600px){.c-section-pattern--curved.u-animate--play{animation:moveCurve linear 1s}}@keyframes moveCurve{0%,20%{-webkit-clip-path:polygon(100% 0, 0 0, 0 100%, 100% 100%);clip-path:polygon(100% 0, 0 0, 0 100%, 100% 100%)}50%{-webkit-clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%);clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}51%,60%{-webkit-clip-path:polygon(0 0, 0 0, 0 100%, 0 100%);clip-path:polygon(0 0, 0 0, 0 100%, 0 100%)}100%{-webkit-clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%)}}.c-section-pattern--circular:before{background-image:url("assets/img/patterns/circular-pattern.png");background-size:600px 600px;background-position:-300px 0}.l-section--blue .c-section-pattern--circular:before{background-image:url("assets/img/patterns/circular-pattern-blue.png")}.l-section--white .c-section-pattern--circular:before,.l-section--offwhite .c-section-pattern--circular:before{filter:hue-rotate(800deg) invert(0.4);opacity:0.1}.c-section-pattern--circular-right:before{top:-100px;background-size:700px 700px;background-position:calc(100% + 200px)}.c-section-pattern--circular-bottom:before{background-size:600px 600px;background-position:50% calc(100% + 480px)}.l-section--blue .c-section-pattern--checked{opacity:0.3}.c-section-pattern--checked:before{background-image:url("assets/img/patterns/checked-pattern-blue.png");background-size:100% 100%;background-repeat:no-repeat}@media screen and (max-width: 600px){.c-section-pattern--checked:before{background-size:auto;background-repeat:repeat-y}}
+ </style>
+<style>.c-section-header{position:relative;margin-bottom:50px}.c-section-header--spaced-top{margin-top:100px}@media screen and (max-width: 600px){.c-section-header--spaced-top{margin-top:50px}}.c-section-header--spaced-bottom{margin-bottom:100px}@media screen and (max-width: 600px){.c-section-header--spaced-bottom{margin-bottom:50px}}@media screen and (max-width: 980px){.c-section-header{display:block}}@media screen and (max-width: 600px){.c-section-header{margin-bottom:50px;display:block}}.c-section-header__body{max-width:64rem;width:60%}@media screen and (max-width: 600px){.c-section-header__body{width:100%}}.c-section-header--center .c-section-header__body{margin:0 auto;text-align:center}.c-section-header--right .c-section-header__body{margin-left:auto;text-align:right}.c-section-header__cta{margin-top:24px}.c-section-header--caption{margin:0 100px 0 0}@media screen and (max-width: 600px){.c-section-header--caption{margin-right:0}}
+ </style>
+<style>.c-feature{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;margin-bottom:150px}@media screen and (max-width: 600px){.c-feature{display:block;margin-bottom:50px}}.c-feature:last-child{margin-bottom:0}.c-feature__left,.c-feature__right{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center}@media screen and (max-width: 600px){.c-feature__left,.c-feature__right{display:block;width:100%;margin-top:50px}}.c-feature__left{margin-right:50px;-ms-flex-align:center;align-items:center}.c-feature--reversed .c-feature__left{-ms-flex-order:2;order:2;margin-left:50px;margin-right:0}@media screen and (max-width: 600px){.c-feature--reversed .c-feature__left{margin:0}}.c-feature__right{-ms-flex-align:center;align-items:center}.c-feature--reversed .c-feature__right{-ms-flex-align:center;align-items:center}.c-feature__body{width:100%;max-width:500px}.c-feature__text{margin-bottom:10px}.c-feature__text p{font-size:1.9rem;line-height:1.5;letter-spacing:-0.01em}@media screen and (max-width: 600px){.c-feature__text p{font-size:1.7rem}}.c-feature__benefits{margin:30px 0}.c-feature__entry{margin-bottom:50px}.c-feature__entry:last-of-type{margin-bottom:0}.c-feature__media{position:relative;z-index:2;transition:all 0.3s ease}.c-feature__media--small .c-feature__image,.c-feature__media--small .c-feature__video{transform:scale(0.4)}.c-feature__media--medium .c-feature__image,.c-feature__media--medium .c-feature__video{transform:scale(0.8)}.c-feature__media figcaption{position:absolute;width:100%}.c-feature__image,.c-feature__video{position:relative}.c-feature__image figcaption,.c-feature__video figcaption{padding:12px;padding-left:2px;font-size:1.2rem;color:rgba(87,111,127,0.8);border-bottom-left-radius:4px;border-bottom-right-radius:4px;color:rgba(87,111,127,0.95)}.c-feature--reversed .c-feature__image figcaption,.c-feature--reversed .c-feature__video figcaption{text-align:left}.c-feature__image img,.c-feature__image video,.c-feature__video img,.c-feature__video video{max-width:100%;vertical-align:middle}.c-feature__image img,.c-feature__video img{border-radius:4px;transition:all 0.5s}@media screen and (max-width: 600px){.c-feature__image video,.c-feature__video video{display:none}}.c-feature__image--small-radius img,.c-feature__video--small-radius img{border-radius:6px}.c-feature__image--dash:after,.c-feature__video--dash:after{content:"";position:absolute;left:24px;top:24px;height:100%;border-radius:6px;width:100%;border:1.2px dashed rgba(59,183,94,0.5)}.c-feature__image--dash__group,.c-feature__video--dash__group{transform:translateX(24px) translateY(24px)}.c-feature__image--dash__group.u-animate-in-view--play,.c-feature__video--dash__group.u-animate-in-view--play{transform:translateX(0) translateY(0)}.c-feature--reversed .c-feature__image--dash__group.u-animate-in-view--play,.c-feature--reversed .c-feature__video--dash__group.u-animate-in-view--play{transform:translateX(48px) translateY(0)}.c-feature__image--ring:after,.c-feature__video--ring:after{content:"";position:absolute;left:50px;top:-50px;width:250px;height:250px;background-image:url("assets/img/patterns/ring-xs.png");background-repeat:no-repeat;background-size:100% 100%;opacity:0.1}.c-feature--reversed .c-feature__image--ring::after,.c-feature--reversed .c-feature__video--ring::after{left:auto;right:-50px}.c-feature__subscript{font-size:2.8rem;font-weight:700;font-family:"Boing",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";color:rgba(1,27,51,0.2);margin-bottom:10px;letter-spacing:1px}.c-feature__cta{margin-bottom:24px}.c-feature__cta .c-button--link{font-size:1.6rem}.c-feature-testimonial{margin-top:15px}.c-feature-testimonial__message{padding:6px 20px;background-color:#F9FBFC;border-radius:4px;border:1px solid rgba(1,27,51,0.06);box-shadow:0px 1px 2px rgba(1,27,51,0.02);position:relative;margin-bottom:24px;max-width:450px}.c-feature-testimonial__message::before,.c-feature-testimonial__message::after{content:'';position:absolute;width:0;height:0;border-style:solid;border-color:transparent;border-bottom:0}.c-feature-testimonial__message::before{bottom:-17px;left:21px;border-top-color:rgba(1,27,51,0.06);border-width:16px}.c-feature-testimonial__message::after{bottom:-15px;left:22px;border-top-color:#F9FBFC;border-width:15px}.l-section--offwhite .c-feature-testimonial__message{background-color:white}.l-section--offwhite .c-feature-testimonial__message::after{border-top-color:white}.c-feature-testimonial__author{padding-left:10px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}.c-feature-testimonial__author-name{font-family:"Boing",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";line-height:1.1;margin-bottom:2px;font-size:1.8rem}.c-feature-testimonial__author-role{font-size:1.2rem}.c-feature-testimonial__author-image{width:50px;height:50px;border-radius:50%;background-color:#F4F7F9;margin-right:12px;-ms-flex-negative:0;flex-shrink:0;overflow:hidden;display:-ms-flexbox;display:flex}.c-feature-testimonial__author-image>img{object-fit:cover;max-width:100%}.c-feature-testimonial__author-image--sm{width:48px;height:48px}.c-feature-testimonial__meta{font-size:1.4rem}
+ </style>
+<style>.l-section--blue .c-testimonial,.l-section--green .c-testimonial{background:rgba(255,255,255,0.85)}.c-testimonial .c-card__header{height:16px;margin:0 0 12px}.c-testimonial .c-card__body{margin:0 0 12px;margin:0;-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between}.c-testimonial__company{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;display:flex}.c-testimonial__company .c-logo{-ms-flex-pack:start;justify-content:flex-start}.c-testimonial__text{margin:32px 0 16px;margin:32px 0}.c-testimonial__author{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center;margin-top:10px}.c-testimonial__author-name{font-family:"Boing",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";line-height:1.1;margin-bottom:4px;font-size:1.8rem}.c-testimonial__author-role{font-size:1.3rem}.c-testimonial__author-image{width:58px;height:58px;border-radius:50%;background-color:#eaf6fc;margin-right:12px;-ms-flex-negative:0;flex-shrink:0;overflow:hidden;display:-ms-flexbox;display:flex}.c-testimonial__author-image>img{object-fit:cover;max-width:100%}.c-testimonial__author-image--sm{width:50px;height:50px}.c-testimonial__meta{font-weight:normal;font-size:1.4rem;color:#3d5e69}.c-testimonial__footnote{font-size:1.4rem;color:#74848A;line-height:1.5}.c-testimonial-block{margin-bottom:30px}
+ </style>
+<style>.c-card{overflow:hidden;height:100%;border-radius:6px;border:1px solid #f0f2f3;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-positive:1;flex-grow:1;padding:48px 32px;box-shadow:0px 1px 6px rgba(0,0,0,0.02);background:white;position:relative;z-index:2}@media screen and (max-width: 600px){.c-card{padding:32px 24px}.c-card:not(last-child){margin-bottom:20px}}.c-card--padded{padding:72px 32px}.c-card--centered{text-align:center}.c-card:hover{box-shadow:0px 1px 6px rgba(0,0,0,0.05)}.c-card__icon{display:-ms-inline-flexbox;display:inline-flex;position:relative;height:80px;margin-top:-10px;-ms-flex-align:center;align-items:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin-bottom:30px;position:relative;transition:0.3s all}.c-card__icon>img{max-height:100%}.c-card__footer{display:-ms-flexbox;display:flex;-ms-flex:1;flex:1;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:end;justify-content:flex-end;padding-top:20px;transform:translateY(24px)}.c-card__link{font-size:1.6rem;font-weight:500;color:#3bb75e;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center}.c-card__body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex:1;flex:1;-ms-flex-pack:justify;justify-content:space-between}.c-card--article .c-card__body>p{margin-top:0}.c-card--article.c-card--engineering{padding:32px;box-shadow:0px 1px 6px rgba(0,0,0,0.06)}.c-card--article.c-card--engineering .c-card__author{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center;margin-top:24px;border-top:1px solid rgba(189,222,244,0.2);padding-top:24px}.c-card--article.c-card--engineering .c-card__author-name{font-family:"Boing",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";line-height:1.1;margin-bottom:2px;font-size:1.8rem}.c-card--article.c-card--engineering .c-card__author-role{font-size:1.3rem}.c-card--article.c-card--engineering .c-card__author-image{width:58px;height:58px;border-radius:50%;background-color:#eaf6fc;margin-right:12px;-ms-flex-negative:0;flex-shrink:0;overflow:hidden;display:-ms-flexbox;display:flex}.c-card--article.c-card--engineering .c-card__author-image>img{object-fit:cover;max-width:100%}.c-card--article.c-card--engineering .c-card__author-image--sm{width:48px;height:48px}.c-card-pattern{position:absolute;top:0;left:0;width:100%;overflow:hidden}.c-card-pattern:before,.c-card-pattern:after{content:'';position:absolute;left:0;top:0;width:100%;height:100%;opacity:0.3;background-repeat:no-repeat}.c-card-pattern--straight{height:400px}.c-card-pattern--straight:before,.c-card-pattern--straight:after{background-image:url("assets/img/patterns/straight-pattern.png");filter:hue-rotate(900deg) invert(0.5)}.c-card-pattern--curved{height:800px}@media screen and (max-width: 600px){.c-card-pattern--curved{height:400px}}.c-card-pattern--curved:before,.c-card-pattern--curved:after{background-size:90% auto;background-image:url("assets/img/patterns/curved-pattern.png");background-position:0 -50%;animation-duration:1000s;animation-iteration-count:infinite;animation-timing-function:linear;filter:hue-rotate(40deg) invert(0.2)}.c-card-pattern--curved:before{animation-name:curved-pattern-animation-before;left:-100%}.c-card-pattern--curved:after{animation-name:curved-pattern-animation-after}@media screen and (max-width: 600px){.c-card-pattern--curved:before,.c-card-pattern--curved:after{animation:none}}.c-card-pattern--circle{width:600px;height:600px;opacity:0.2;left:-50%;top:-150%}.c-card-pattern--circle:before{background-image:url("assets/img/patterns/circular-pattern.png");background-size:100% auto;background-position:0 100%;filter:hue-rotate(900deg) invert(0.5);animation:spin 300s infinite}
+ </style>
+<style>.c-signup{display:-ms-flexbox;display:flex;padding:100px 0 0}@media screen and (max-width: 600px){.c-signup{display:block;padding:0}}.c-signup__left{width:100%;max-width:600px}@media screen and (max-width: 600px){.c-signup__left{text-align:center;margin-bottom:50px}}.c-signup__left>p{margin-bottom:20px}.c-signup__right{-ms-flex:1;flex:1;width:300px;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;-ms-flex-align:center;align-items:center}@media screen and (max-width: 600px){.c-signup__right{width:100%;-ms-flex-pack:center;justify-content:center}}
+ </style>
+<style>.c-footer__row{display:-ms-flexbox;display:flex;margin-bottom:48px}@media screen and (max-width: 750px){.c-footer__row{-ms-flex-wrap:wrap;flex-wrap:wrap;display:-ms-flexbox;display:flex;margin-bottom:24px}}.c-footer__row--no-padder{padding:0}.c-footer__row:last-child{padding-top:48px;margin-bottom:0;border-top:1px solid rgba(240,242,243,0.85)}@media screen and (max-width: 600px){.c-footer__row:last-child{padding-top:24px}.c-footer__row:last-child .c-footer-menu__group{display:block}.c-footer__row:last-child .c-footer__column{margin-bottom:30px}.c-footer__row:last-child .c-footer__column:last-child{margin-bottom:0}}.c-footer__column{-ms-flex:0 1 33.33%;flex:0 1 33.33%;padding:0 16px;transition:0.4s}@media screen and (max-width: 750px){.c-footer__column:last-of-type{margin-bottom:24px}}@media screen and (max-width: 600px){.c-footer__column{-ms-flex:0 1 100%;flex:0 1 100%;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;padding:0}.c-footer__column:last-of-type{margin-bottom:0}}.c-footer__group{margin-bottom:20px}@media screen and (max-width: 600px){.c-footer__group{margin-bottom:0}.c-footer__group .c-footer__header:before{display:block}.c-footer__group .c-footer-list{max-height:0}}.c-footer__header{position:relative;color:#011b33;display:inline-block;font-size:1.8rem}.c-footer__header--muted{color:#3d5e69;font-weight:500}.c-footer__header:before{display:none;content:"";position:absolute;right:0;width:0;height:0;top:50%;transform:translateY(-50%) rotate(0);border-style:solid;border-width:3px 0 3px 5.2px;border-color:transparent transparent transparent #011b33;transition:ease-in-out 0.1s transform}@media screen and (max-width: 600px){.c-footer__header{margin-bottom:16px;display:block}.c-footer__header--active:before{transform:translateY(-50%) rotate(90deg)}}.c-footer-list{margin-bottom:48px}@media screen and (max-width: 600px){.c-footer-list{overflow:hidden;padding-right:16px;margin-bottom:8px;transition:max-height 0.2s ease-out}}.c-footer-list:last-of-type{margin-bottom:0}.c-footer-list__item{color:rgba(1,27,51,0.9);margin-bottom:6px;line-height:1.6;text-transform:capitalize}@media screen and (max-width: 600px){.c-footer-list__item{margin-bottom:8px}.c-footer-list__item:last-child{margin-bottom:16px}}.c-footer-list__item a:hover{color:#0ba4db}.c-footer-list__item--contact{color:#0ba4db;text-transform:none}.c-footer-list__item--contact a:hover{color:#0980aa}.c-footer-list__item--lowercase{text-transform:lowercase}.c-footer-list--social{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.c-footer-list--social .c-footer-list__item{padding-right:20px;margin-bottom:0}.c-footer-list--social .c-footer-list__item svg{max-width:20px;display:-ms-flexbox;display:flex;vertical-align:middle;object-fit:cover;opacity:0.87;transition:0.25s ease-in-out opacity}.c-footer-list--social .c-footer-list__item svg:hover{opacity:1}.c-footer-list--social .c-footer-list__item:last-child{padding-right:0}.c-footer-footnote{display:-ms-flexbox;display:flex;padding:24px 16px;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;font-size:1.3rem;color:#3d5e69;box-shadow:inset 0 1px 1px rgba(240,242,243,0.05)}.c-footer-footnote__item{position:relative}.c-footer-footnote__item select{font-size:1.2rem;display:-ms-inline-flexbox;display:inline-flex;font-family:"Graphik",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";height:48px;background-color:transparent;border:0;-ms-flex-align:center;align-items:center;padding:12px;color:#3d5e69;text-transform:uppercase;letter-spacing:0.4px;width:100%;-moz-appearance:none;appearance:none;-webkit-appearance:none;font-weight:500;outline:none}.c-footer-footnote__item--countries{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;cursor:pointer}.c-footer-footnote__item--countries .u-flag-icon{margin-right:8px;border-radius:2px}
+ </style></head>
+      
+   	   <body>
+
+
+
+
+
+
+
+<header>
+    
+    
+    <nav>
+    <div class="c-nav">
+        <div class="c-nav--left">
+            <a href="index.html" class="c-nav__logo">
+                <img src="images/logo.png" alt="">
+            </a>
+            
+        </div>
+            <div class="c-nav--right">
+            <ul class="c-nav-menu c-nav-menu--horizontal">
+                
+                <li class="c-nav-menu__item c-nav-menu__item--green">
+                    <a href="#">About</a>
+                </li>
+
+                <li class="c-nav-menu__item c-nav-menu__item--green">
+                    <a href="#">Pricing</a>
+                </li>
+
+                <li class="c-nav-menu__item c-nav-menu__item--green">
+                    <a href="#">Testimonials</a>
+                </li>
+
+                <li class="c-nav-menu__item c-nav-menu__item--green">
+                    <a href="#">Contacts</a>
+                </li>
+
+                <li class="c-nav-menu__item--cta">
+                    <a href="#" class="c-button c-button c-button--primary">
+                        Login
+                    </a>
+                </li>
+                
+             </ul>
+        </div>
+               
+
+    </div>
+    
+
+    <!-- -->
+  <div class="c-nav c-nav--mobile-only">
+  
+        <div class="c-nav__header">
+            <div class="c-nav--left">
+                <a href="index.html" class="c-nav__logo">
+                <img src="images/logo.png" alt="">
+                </a>
+            </div>
+
+
+            <div class="c-nav--right">
+                <a href="#" class="c-button c-button c-button--primary">
+                    Login
+                </a>
+                <div id="js-mobile-nav-trigger" class="c-nav__trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="c-nav__body c-nav__body--parent u-animate u-animate--fade-in">
+            <div class="c-nav__mask">
+                <div id="js-main-nav">
+                    <ul class="c-nav-menu">
+                       
+                        <li class="c-nav-menu__item js-nav-has-children" id="developers">
+                            <a href="index.html#">
+                               About
+                            </a>
+                        </li>
+                        <li class="c-nav-menu__item js-nav-has-children" id="support">
+                            <a href="index.html#">
+                                Pricing
+                            </a>
+                        </li>
+                       <li class="c-nav-menu__item js-nav-has-children" id="support">
+                            <a href="index.html#">
+                                Testimonials
+                            </a>
+                        </li>
+                        <li class="c-nav-menu__item js-nav-has-children" id="support">
+                            <a href="index.html#">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="c-nav-menu__item c-nav-menu__item--cta">
+                            <a class="c-button c-button--primary u-text-center c-button--full-width c-button--lg" href="#">
+                                Login 
+                            </a>
+                        </li>
+                        <li class="c-nav-menu__item c-nav-menu__item--cta">
+                            <a class="c-button c-button--primary u-text-center c-button--full-width c-button--lg" href="#">
+                                Sign Up
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+</header>
+
+
+<!-- -->
+
+
+
+
+
+
+						                                
+    
+
+<section class="l-section l-section--hero l-section-- l-section--blue" id="hero">
+            <div class="c-section-pattern u-animate u-animate--play c-section-pattern--curved"></div>
+                    <div id="js-hero" class="c-hero c-hero--double-sided c-hero--has-video">
+    <div class="l-container l-container--lg u-flex">  
+        <div class="c-hero__side">
+            <div class="c-hero__body">
+                <div class="c-hero__heading u-animate--slideUp">
+
+                
+                    <h1 class="u-animate u-animate__delay--300 u-animate--glide-up">IEEE Job Fair 2019</h2>
+                    <p class="u-text-summary u-animate u-animate__delay--300 u-animate__duration--600 u-animate--glide-up">We helps students in Kerala get paid by anyone, anywhere in the world get paid by anyone.</p>
+                </div>
+                                                <div class="c-hero__cta u-animate u-animate__ease--custom-1 u-animate__delay--400 u-animate__duration--1000 u-animate--fade-in">
+                    <a href=" " class="c-button--lg c-button c-button--primary">
+                        Register Here
+                    </a>
+                </div>
+                  
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <div id="js-hero-footer" class="c-hero__footer c-hero__footer-- u-animate--fade-in">
+        <div class="l-container l-container--lg u-flex-center">
+            <div class="c-hero__logos">
+            <p>Powered by </p>
+                                                            <div class="c-logo ">
+                    <img src="images/ieee.png" alt=" ">
+                </div>
+                                                           
+                                                           <!-- <div class="c-logo ">
+                    <img src="images/link.png" alt=" ">
+                </div>--> 
+                                                            <div class="c-logo ">
+                    <img src="images/link.png" alt=" ">
+                </div>
+                                                       
+                    </div>
+                                <div id="js-hero-video-summary" class="c-hero__video-summary" js-show-overlay data-overlay="hero-video">
+                <div><p>Watch MTN Chief Transformation Officer, Olubayo Adekanmbi, discuss working with Paystack</p></div>
+                <div class="c-hero__button u-hidden--mobile">
+                    <button class="c-button"><svg width="10" height="13" xmlns="http://www.w3.org/2000/svg"><path d="M2.438 12.389l5.943-4.417s.653-.54.653-1.133c0-.624-.653-1.134-.653-1.134L2.438 1.288C1.633.563.15.605.15 2.231v9.215c0 1.625 1.483 1.668 2.288.943z" fill="#0BA4DB" fill-rule="nonzero"/></svg></button>
+                </div>
+                <div class="c-hero__button u-mobile-only">
+                     <button type="button" class="c-button--play c-button--reset">
+                        <svg width="10" height="13" xmlns="http://www.w3.org/2000/svg"><path d="M2.438 12.389l5.943-4.417s.653-.54.653-1.133c0-.624-.653-1.134-.653-1.134L2.438 1.288C1.633.563.15.605.15 2.231v9.215c0 1.625 1.483 1.668 2.288.943z" fill="#0BA4DB" fill-rule="nonzero"/></svg>
+                        Play Video
+                    </button>
+                </div>
+            </div>
+                </div>
+    </div>
+    </div>
+    <div class="u-overlay" id="hero-video">
+    <div class="c-hero-video">    
+        <button class="c-button c-button--close" js-hide-overlay data-overlay="hero-video">
+            <span class="u-mobile-only">Close</span>
+        </button>
+        <div class="c-hero-video__iframe">
+            <iframe id="js-hero-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+</section>
+
+
+                                
+<section class="l-section l-section--pad-top l-section--pad-bottom l-section--white">
+<div class="c-section-pattern "></div>
+<div class="l-container l-container--lg">
+<div class="c-feature ">
+    <div class="c-feature__left">
+        <div class="c-feature__media">
+            <figure class="c-feature__image">
+                <div js-animate-in-view data-offset="40">
+                    <img src=images/dev.png>                                                                                                    <img class="u-lazyload" data-src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%271%27%20height%3D%271%27%20style%3D%27background%3A%23011b33%27%2F%3E" data-sizes="100vw" data-srcset="/imager/contentimages/1300/Robust-Suite-of-APIs-Opt_67be35e9588e5fa1771ce1ce453b6cab.png 600w, /imager/contentimages/1300/Robust-Suite-of-APIs-Opt_eefbcdb8068368c6b748692d34b39355.png 400w" alt="Robust Suite Of Apis Opt">
+            </div>
+            </figure>
+                    </div>
+    </div>
+    <div class="c-feature__right">
+        
+<div class="c-feature__body">
+    <div class="c-feature__text">
+                <h3>Overview</h3>
+        <p>Developers love our thorough, well-documented APIs that let you to build everything from simple weekend projects, to complex financial products serving hundreds of thousands of customers. If you can imagine it, you can build it with Paystack.</p>
+    </div>
+                                
+        <div class="c-feature__benefits u-flex">
+            <ul class="u-list u-list--green ">
+                                <li>Job Fair 2019 is exclusively for 2018 passouts.</li>
+                                <li>Active IEEE Members must fill in their IEEE Membership ID in the registration form</li>
+                                <li>Active IEEE Members must produce their membership grade card at the aptitude centre.</li>
+                                <li>Non IEEE Members are supposed to pay a fee of Rs.250/- here for writing the aptitude test.</li>
+                                <li>Link for Payment for Non-IEEE Members will be sent through Email.</li>
+                                <li>Non IEEE Members must fill in the 'Payment Conifrmation (For Non IEEE Members)' form once you complete the payment</li>
+                                <li>Dates and details of Aptitude test will be notified through Email.</li>
+                            </ul>
+                    </div>
+    
+        </div>
+
+
+    </div>
+</div>
+
+
+                                                </div>
+    </section>
+
+
+
+
+<section class="l-section l-section--pad-top l-section--pad-bottom l-section--blue">
+<div class="c-section-pattern c-section-pattern--checked"></div>
+<div class="l-container l-container--lg">
+<div class="c-section-header c-section-header--left">
+    <div class="c-section-header__body">
+        <h2>Shedule & Venue</h2>
+                <p class="u-text-summary">Federal Institute of Science And Technology (FISAT)</p>
+        </div>
+    </div>
+
+
+                                                                        
+<div class="u-flex ">
+                    <div class="u-flex-child">
+            
+
+<div class="c-card c-card--article">
+        <div class="c-card__header">
+       
+    </div>
+        <div class="c-card__body">
+        <h4 class="u-h4-bolder">Preliminary Test</h4>
+        <p>Across 5 Centers in Kerala. Further details will announced.</p>
+                        <div class="c-card__link">
+            <a href="#"  class="c-button c-button--primary c-button--link">
+                <span class="c-button__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="16" fill="#3BB75E" fill-opacity="0" transform="translate(2 2)"/><circle cx="10" cy="10" r="8.72781" fill="#3BB75E" fill-opacity="0" stroke="#3BB75E" stroke-width="1.45563"/><path d="M9 6.37524L12.5355 9.91078L9 13.4463" stroke="#3BB75E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="c-button__text">
+                    16th February 2019
+                </span>
+            </a>
+        </div>
+            </div>
+            
+</div>
+
+        </div>
+                    <div class="u-flex-child">
+            
+
+<div class="c-card c-card--article">
+        <div class="c-card__header">
+        
+    </div>
+        <div class="c-card__body">
+        <h4 class="u-h4-bolder">Training for shortlisted candidates</h4>
+        <p>Further details will announced.</p>
+                        <div class="c-card__link">
+            <a href="#"  class="c-button c-button--primary c-button--link">
+                <span class="c-button__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="16" fill="#3BB75E" fill-opacity="0" transform="translate(2 2)"/><circle cx="10" cy="10" r="8.72781" fill="#3BB75E" fill-opacity="0" stroke="#3BB75E" stroke-width="1.45563"/><path d="M9 6.37524L12.5355 9.91078L9 13.4463" stroke="#3BB75E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="c-button__text">
+                    1st March 2019
+                </span>
+            </a>
+        </div>
+            </div>
+            
+</div>
+
+        </div>
+                    <div class="u-flex-child">
+            
+
+<div class="c-card c-card--article">
+        <div class="c-card__header">
+       
+    </div>
+        <div class="c-card__body">
+        <h4 class="u-h4-bolder">Interviews and futher selection</h4>
+        <p>For those who got selected.</p>
+                        <div class="c-card__link">
+            <a href="#"  class="c-button c-button--primary c-button--link">
+                <span class="c-button__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="16" fill="#3BB75E" fill-opacity="0" transform="translate(2 2)"/><circle cx="10" cy="10" r="8.72781" fill="#3BB75E" fill-opacity="0" stroke="#3BB75E" stroke-width="1.45563"/><path d="M9 6.37524L12.5355 9.91078L9 13.4463" stroke="#3BB75E" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="c-button__text">
+                    25th March 2019
+                </span>
+            </a>
+        </div>
+            </div>
+            
+</div>
+
+        </div>
+    </div>
+
+                                        </div>
+    </section>
+                                  
+    
+    
+
+
+
+
+    <section class="l-section l-section--hero l-section-- l-section--green" id="hero">
+            <div class="c-section-pattern u-animate u-animate--play c-section-pattern--curved"></div>
+                    
+<div class="c-hero c-hero--pricing">
+                                
+    
+    <div class="c-hero__body">
+        <div class="c-hero__heading">
+            <h1>Simple, fair pricing</h2>
+            <p class="u-text-summary">Paystack only makes money when you do.</p>
+        </div>
+
+        <div class="l-container">
+            <div class="c-pricing-cards">
+                                                    <div class="u-flex ">
+                    <div class="u-flex-child">
+                        
+<div class="c-card c-card--pricing">
+    <div class="c-card__header">
+        <h5 class="u-text--weight-normal">
+            IEEE Members
+        </h5>
+        <h3>
+            <span class="u-text--2x">
+            1000            </span>
+        </h3>
+    </div>
+    <div class="c-card__body">
+                    <ul class="u-list u-list--green">
+                            <li>
+                    ₦100 fee waived for transactions under ₦2500
+                </li>
+                            <li>
+                    Local transactions fees are capped at ₦2000, meaning that&#039;s the absolute maximum you&#039;ll ever pay in fees per transaction
+                </li>
+                        </ul>
+            </div>
+</div>
+
+
+                    </div>
+                    <div class="u-flex-child">
+                        
+<div class="c-card c-card--pricing">
+    <div class="c-card__header">
+        <h5 class="u-text--weight-normal">
+            NON-IEEE Members
+        </h5>
+        <h3>
+            <span class="u-text--2x">
+            1500             </span>
+        </h3>
+    </div>
+    <div class="c-card__body">
+                    <ul class="u-list u-list--green">
+                            <li>
+                    Get paid by your customers from all over the world
+                </li>
+                            <li>
+                    International cards are charged and settled in Naira by default, but you can also choose to get settled in USD.
+                </li>
+                        </ul>
+            </div>
+</div>
+
+
+                    </div>
+                </div>
+                        </div>
+        </div>
+    </div>
+</div>
+
+
+        </section>
+
+
+
+
+
+
+    
+    
+    <section class="l-section l-section--pad-top l-section--pad-bottom l-section--white">
+                    
+<div class="c-section-pattern "></div>
+
+
+                   <div class="l-container l-container--lg">
+                                                                
+
+<div class="c-section-header c-section-header--left">
+    <div class="c-section-header__body">
+        <h2>Past Recruiters</h2>
+                <p class="u-text-summary">Choose a job you love, and you will never have to work in a day.</p>
+                                
+    </div>
+</div>
+
+
+                                                                        
+<div class="c-logo-row c-logo-row--has-grid">
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c/1.png" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c/2.png" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c/3.png" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c/5.png" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c/6.png" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c/7.png" alt=" ">
+    </div>
+</div>
+
+<!--
+                                                                        
+<div class="c-logo-row c-logo-row--has-grid">
+                 <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c1.svg" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c1.svg" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c1.svg" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c1.svg" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c1.svg" alt=" ">
+    </div>
+            <div class="c-logo">
+        <img class="u-lazyload" data-src="images/c1.svg" alt=" ">
+    </div>
+</div>
+-->
+
+                                        </div>
+    </section>
+                        
+    <section class="l-section l-section--pad-top l-section--pad-bottom l-section--offwhite">
+                    
+<div class="c-section-pattern c-section-pattern--circular c-section-pattern--circular-right"></div>
+
+
+                <div class="l-container l-container--lg">
+                                                                
+
+<div class="c-section-header c-section-header--left">
+    <div class="c-section-header__body">
+        <h2>Testimonials</h2>
+                <p class="u-text-summary">Failure is the condiment that gives success its flavor.</p>
+                                
+    </div>
+</div>
+
+
+                                                                        
+<div class="u-flex c-testimonial-block">
+        <div class="u-flex-child">
+                <div class="c-card c-testimonial">
+    <div class="c-card__header">
+        <div class="c-testimonial__company">
+                        <div class="c-logo">
+                                                        <img class="u-lazyload" data-src=" " data-sizes="100vw" data-srcset="images/1t.png" alt=" ">
+                             
+            </div>
+        </div>
+    </div>
+    <div class="c-card__body">
+        <p class="c-testimonial__text">
+            Paystack is highly technical and fanatically customer oriented. We’re excited to back such people in one of the world’s fastest-growing regions.
+        </p>
+        <div class="c-testimonial__author">
+                                                <div class="c-testimonial__author-image c-testimonial__author-image--sm">
+                <img class="u-lazyload" data-src="" data-sizes="100vw" data-srcset="images/1tt.jpg" alt=" ">
+            </div>
+                        <div class="c-testimonial__author-info">
+                <div class="c-testimonial__author-name">Patrick Collison</div>
+                <div class="c-testimonial__author-role"><span>CEO</span><span>, Stripe</span></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+        <div class="u-flex-child">
+                <div class="c-card c-testimonial">
+    <div class="c-card__header">
+        <div class="c-testimonial__company">
+                        <div class="c-logo">
+                                                        <img class="u-lazyload" data-src=" " data-sizes="100vw" data-srcset="images/2t.png" alt=" ">
+                             
+            </div>
+        </div>
+    </div>
+    <div class="c-card__body">
+        <p class="c-testimonial__text">
+            Our investment in Paystack aligns with the kind of investments we look for - those that will help extend our reach into the global commerce ecosystem
+        </p>
+        <div class="c-testimonial__author">
+                                                <div class="c-testimonial__author-image c-testimonial__author-image--sm">
+                <img class="u-lazyload" data-src=" " data-sizes="100vw" data-srcset="images/1tt.jpg" alt=" ">
+            </div>
+                        <div class="c-testimonial__author-info">
+                <div class="c-testimonial__author-name">Otto Williams</div>
+                <div class="c-testimonial__author-role"><span>Head of Strategic Partnerships, Fintech &amp; Ventures CEMEA</span><span>, Visa</span></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+        <div class="u-flex-child">
+                <div class="c-card c-testimonial">
+    <div class="c-card__header">
+        <div class="c-testimonial__company">
+                        <div class="c-logo">
+                                                        <img class="u-lazyload" data-src=" " data-sizes="100vw" data-srcset="images/3t.png" alt="Y Combinator">
+                             
+            </div>
+        </div>
+    </div>
+    <div class="c-card__body">
+        <p class="c-testimonial__text">
+            As YC&#039;s first Nigerian startup Paystack leads the charge of great companies coming out of Africa, powering modern payments for an entire continent.
+        </p>
+        <div class="c-testimonial__author">
+                                                <div class="c-testimonial__author-image c-testimonial__author-image--sm">
+                <img class="u-lazyload" data-src=" " data-sizes="100vw" data-srcset="images/1tt.jpg" alt=" ">
+            </div>
+                        <div class="c-testimonial__author-info">
+                <div class="c-testimonial__author-name">Michael Seibel</div>
+                <div class="c-testimonial__author-role"><span>CEO, Partner</span><span>, Y Combinator</span></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+    </div>
+
+
+                                        </div>
+    </section>
+        <section class="l-section l-section--padded-xs l-section--md l-section--white">
+    <div js-animate-in-view class="c-section-pattern c-section-pattern--curved"></div>
+    <div class="l-container l-container--lg">
+        <div class="c-signup">
+            <div class="c-signup__left">
+                <p class="u-text-summary">Register Now</p>
+                <div js-animate-in-view data-animation="slideUp" data-offset="80">
+                    <h2>Start accepting payments in just 30 minutes</h2>
+                </div>
+            </div>
+            <div class="c-signup__right">
+                <div class="c-signup__cta">
+                                                            <a href=" " class="c-button--lg c-button c-button--primary">
+                        Register here
+                    </a>
+                                                            <a href=""class="c-button c-button--primary c-button--demo c-button--link">
+                        
+                    </a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+	
+							
+        
+        
+
+<section class="l-section l-section--pad-bottom l-section--white">
+    <div class="l-container l-container--lg">
+       
+
+
+
+        <div class="c-footer__row">
+            <div class="c-footer__column">
+                <h4 class="c-footer__header">Email</h4>
+                <ul class="c-footer-list">
+                    <li class="c-footer-list__item c-footer-list__item--contact c-footer-list__item--lowercase"><a href="mailto:info@ieeejobfair.com"><span class="__cf_email__" data-cfemail="">info@ieeejobfair.com</span></a></li>
+                </ul>
+            </div>
+             <div class="c-footer__column">
+                <h4 class="c-footer__header">Contact</h4>
+                <ul class="c-footer-list">
+                    <li class="c-footer-list__item">+91 9895100209<br>+91 8281422921</li>
+                </ul>
+            </div>
+             <div class="c-footer__column">
+                <h4 class="c-footer__header">Venue</h4>
+                <ul class="c-footer-list">
+                    <li class="c-footer-list__item">Federal Institute of Science And Technology (FISAT)</li>
+                </ul>
+            </div>
+             <div class="c-footer__column">
+                <h4 class="c-footer__header">Social</h4>
+                <ul class="c-footer-list c-footer-list--social">
+                    <li class="c-footer-list__item">
+                        <a href="https://facebook.com/ieeekerala" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="20" fill="white"/>
+<path d="M18.8962 0H1.10375C0.49375 0 0 0.49375 0 1.10375V18.8962C0 19.5062 0.49375 20 1.10375 20H10.6825V12.255H8.075V9.2375H10.6825V7.00875C10.6825 4.42625 12.26 3.02125 14.565 3.02125C15.6688 3.02125 16.6175 3.10125 16.8938 3.13875V5.83875H15.2937C14.0437 5.83875 13.8 6.43875 13.8 7.31375V9.23875H16.7875L16.4 12.2637H13.8V20H18.8962C19.5062 20 20 19.5062 20 18.8962V1.10375C20 0.49375 19.5062 0 18.8962 0Z" fill="#3d5e69"/>
+</svg>
+
+                        </a>
+                    </li>
+                    <li class="c-footer-list__item">
+                        <a href="https://twitter.com/ieeekerala" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect width="20" height="20" fill="white"/>
+<path d="M19.6819 1.93532C19.2375 2.13237 18.7763 2.28782 18.3029 2.40036C18.8245 1.90474 19.2166 1.28483 19.4379 0.592898C19.501 0.395363 19.2865 0.224549 19.1081 0.330314C18.4496 0.720898 17.7403 1.01391 16.9999 1.2013C16.9569 1.21218 16.9126 1.21769 16.8681 1.21769C16.7332 1.21769 16.6021 1.16761 16.499 1.07672C15.7112 0.382392 14.6979 5.50597e-08 13.646 5.50597e-08C13.1908 5.50597e-08 12.7312 0.0709489 12.28 0.210896C10.8819 0.644537 9.80311 1.79781 9.46465 3.22069C9.33768 3.75439 9.3033 4.28858 9.3624 4.80838C9.36918 4.86811 9.34094 4.9098 9.32353 4.92936C9.29296 4.96364 9.24961 4.98329 9.2046 4.98329C9.19958 4.98329 9.19441 4.98304 9.18929 4.98256C6.12889 4.69823 3.36915 3.22381 1.41842 0.830955C1.31895 0.708903 1.12819 0.723873 1.0489 0.85987C0.666902 1.51523 0.465027 2.2648 0.465027 3.02754C0.465027 4.19646 0.934654 5.29805 1.75039 6.10111C1.40735 6.01977 1.07533 5.89168 0.766913 5.72038C0.617701 5.63748 0.434112 5.74403 0.432015 5.91469C0.410657 7.65121 1.42735 9.19638 2.95038 9.89217C2.91971 9.8929 2.88904 9.89324 2.85832 9.89324C2.6169 9.89324 2.37245 9.86993 2.13186 9.82395C1.96383 9.79186 1.82266 9.95127 1.87484 10.1142C2.36919 11.6575 3.69805 12.7952 5.28828 13.0535C3.96848 13.9394 2.43155 14.4068 0.831913 14.4068L0.333223 14.4065C0.179574 14.4065 0.0496227 14.5066 0.0104668 14.6554C-0.028104 14.802 0.0429423 14.9566 0.173966 15.0329C1.9765 16.0819 4.03256 16.6363 6.12074 16.6363C7.94859 16.6363 9.65838 16.2736 11.2027 15.5582C12.6184 14.9024 13.8694 13.965 14.921 12.7719C15.9007 11.6605 16.6667 10.3775 17.1978 8.95866C17.7041 7.60615 17.9717 6.16299 17.9717 4.78517V4.71953C17.9717 4.4983 18.0717 4.29014 18.2463 4.14843C18.9087 3.61059 19.4856 2.97746 19.9608 2.26666C20.0863 2.07897 19.8884 1.84374 19.6819 1.93532Z" transform="translate(0 1.68164)" fill="#3d5e69"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+                        </a>
+                    </li>
+                    <li class="c-footer-list__item">
+                        <a href="https://instagram.com/ieeekerala" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect width="20" height="20" fill="white"/>
+<path d="M14.0419 0H5.95811C2.67279 0 0 2.67279 0 5.95811V14.0419C0 17.3272 2.67279 20 5.95811 20H14.0419C17.3272 20 20 17.3272 20 14.0419V5.95811C20 2.67279 17.3272 0 14.0419 0ZM17.988 14.0419C17.988 16.2212 16.2212 17.988 14.0419 17.988H5.95811C3.77875 17.988 2.012 16.2212 2.012 14.0419V5.95811C2.012 3.77871 3.77875 2.012 5.95811 2.012H14.0419C16.2212 2.012 17.988 3.77871 17.988 5.95811V14.0419Z" fill="#3d5e69"/>
+<path d="M5.17271 0C2.32047 0 0 2.32047 0 5.17267C0 8.02488 2.32047 10.3454 5.17271 10.3454C8.02495 10.3454 10.3454 8.02491 10.3454 5.17267C10.3454 2.32044 8.02495 0 5.17271 0ZM5.17271 8.33342C3.42708 8.33342 2.012 6.91834 2.012 5.17271C2.012 3.42708 3.42712 2.012 5.17271 2.012C6.91834 2.012 8.33343 3.42708 8.33343 5.17271C8.33343 6.9183 6.9183 8.33342 5.17271 8.33342Z" transform="translate(4.828 4.82812)" fill="#3d5e69"/>
+<path d="M1.23949 2.47898C1.92404 2.47898 2.47898 1.92404 2.47898 1.23949C2.47898 0.554938 1.92404 0 1.23949 0C0.554938 0 0 0.554938 0 1.23949C0 1.92404 0.554938 2.47898 1.23949 2.47898Z" transform="translate(13.9432 3.62695)" fill="#3d5e69"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+                        </a>
+                    </li>
+                  
+                  
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+				
+		</body>
+      
+   </html>
